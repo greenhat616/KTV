@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group 'me.a632079'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'mysql:mysql-connector-java:8.0.29' // MySQL JDBC 驱动
+    implementation 'cn.hutool:hutool-all:5.8.3' // HuTool 语法糖 工具库
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+jar {
+    manifest {
+        attributes('Main-Class': 'me.a632079.ktv.Application')
+    }
+}
