@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * @className: DBUtils
- * @description: JBDC π§æﬂ¿‡∑‚◊∞
+ * @description: JBDC Â∑•ÂÖ∑Á±ªÂ∞ÅË£Ö
  * @version: v1.0.0
  * @date: 2022/5/13 13:38
  * @author: haoduor

@@ -4,7 +4,7 @@ import me.a632079.ktv.views.MainWindow;
 
 public class Application {
     public static void  main (String args[]) {
-        // Æô¶¯Ö÷´°¿Ú
+        // å¯åŠ¨ä¸»çª—å£
     	MainWindow.main(null);
     }
 }

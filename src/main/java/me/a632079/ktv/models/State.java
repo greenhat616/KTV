@@ -3,6 +3,6 @@ package me.a632079.ktv.models;
 import java.time.LocalDateTime;
 
 public class State {
-	public static LocalDateTime startDate = LocalDateTime.of(2022, 5, 22, 10, 13); // Ä¬ÈÏÖµ£¬ÓÃÓÚ²âÊÔ
-	public static String room = "Ááçç°ü"; // Ä¬ÈÏÖµ£¬ÓÃÓÚ²âÊÔ
+	public static LocalDateTime startDate = LocalDateTime.of(2022, 5, 22, 10, 13); // é»˜è®¤å€¼ï¼Œç”¨äºæµ‹è¯•
+	public static String room = "ç²ç‘åŒ…"; // é»˜è®¤å€¼ï¼Œç”¨äºæµ‹è¯•
 }

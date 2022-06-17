@@ -42,17 +42,17 @@ public class MainWindow {
 	}
 
 	/**
-	 * ´´½¨ MainWindow
+	 * åˆ›å»º MainWindow
 	 */
 	public MainWindow() {
 		initialize();
 	}
 
 	/**
-	 * ³õÊ¼»¯´°¿Ú×é¼ş
+	 * åˆå§‹åŒ–çª—å£ç»„ä»¶
 	 */
 	private void initialize() {
-		// ¶¨Òå´°¿Ú
+		// å®šä¹‰çª—å£
 		frmKtv = new JFrame();
 		frmKtv.setTitle("KTV  \u70B9\u6B4C\u7CFB\u7EDF");
 		frmKtv.setBounds(100, 100, 662, 497);
@@ -60,23 +60,23 @@ public class MainWindow {
 		frmKtv.getContentPane().setLayout(new CardLayout(0, 0));
 		frmKtv.setLocationRelativeTo(null);
 
-		// ·ÖÒ³×é¼ş
+		// åˆ†é¡µç»„ä»¶
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		tabbedPane.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		frmKtv.getContentPane().add(tabbedPane, "name_69055496515499");
 
-		// Ïû·ÑÕß·ÖÒ³
+		// æ¶ˆè´¹è€…åˆ†é¡µ
 		JPanel userPanel = new JPanel();
 		tabbedPane.addTab("\u6D88\u8D39\u8005", null, userPanel, null);
 		userPanel.setLayout(null);
 
-		// °üÏáÑ¡Ôñ±êÇ©
+		// åŒ…å¢é€‰æ‹©æ ‡ç­¾
 		JLabel lblConsumerRoomLabel = new JLabel("\u5305\u53A2\u9009\u62E9");
-		lblConsumerRoomLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 40));
+		lblConsumerRoomLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 40));
 		lblConsumerRoomLabel.setBounds(105, 69, 177, 75);
 		userPanel.add(lblConsumerRoomLabel);
 
-		// °üÏáÑ¡Ôñ Ñ¡ÔñÆ÷
+		// åŒ…å¢é€‰æ‹© é€‰æ‹©å™¨
 		String[] roomList = Room.toComboBoxList();
 		JComboBox roomSelectComboBox = new JComboBox(roomList);
 		roomSelectComboBox.setSelectedIndex(0);
@@ -84,87 +84,87 @@ public class MainWindow {
 		roomSelectComboBox.setBounds(305, 82, 152, 48);
 		userPanel.add(roomSelectComboBox);
 
-		// ÊÕ·Ñ±ê×¼°´Å¥
+		// æ”¶è´¹æ ‡å‡†æŒ‰é’®
 		JButton btnFeeScale = new JButton("\u6536\u8D39\u6807\u51C6");
 		btnFeeScale.addActionListener(new ActionListener() {
-			// ¼àÌıµã»÷ÊÂ¼ş£¬´ò¿ªÊÕ·Ñ±ê×¼´°¿Ú
+			// ç›‘å¬ç‚¹å‡»äº‹ä»¶ï¼Œæ‰“å¼€æ”¶è´¹æ ‡å‡†çª—å£
 			public void actionPerformed(ActionEvent e) {
 				FeeScaleWindow.main(null);
 			}
 		});
-		btnFeeScale.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnFeeScale.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnFeeScale.setBounds(236, 185, 152, 48);
 		userPanel.add(btnFeeScale);
 
-		// ¿ªÊ¼°´Å¥
+		// å¼€å§‹æŒ‰é’®
 		JButton btnStart = new JButton("\u5F00\u59CB\u5531\u6B4C");
 		btnStart.addActionListener(new ActionListener() {
-			// ¿ªÊ¼µã¸è
+			// å¼€å§‹ç‚¹æ­Œ
 			public void actionPerformed(ActionEvent e) {
-				// ³õÊ¼»¯¹²Ïí×´Ì¬£¬²¢ÇÒÆô¶¯ÓÃ»§´°¿Ú
+				// åˆå§‹åŒ–å…±äº«çŠ¶æ€ï¼Œå¹¶ä¸”å¯åŠ¨ç”¨æˆ·çª—å£
 				State.room = (String) roomSelectComboBox.getSelectedItem();
 				State.startDate = LocalDateTime.now();
 				MainUserWindow.main(null);
-				frmKtv.dispose(); // Ïú»Ùµ±Ç°´°¿Ú
+				frmKtv.dispose(); // é”€æ¯å½“å‰çª—å£
 			}
 		});
-		btnStart.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnStart.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnStart.setBounds(236, 263, 152, 48);
 		userPanel.add(btnStart);
 
-		// ÍË³ö°´Å¥
+		// é€€å‡ºæŒ‰é’®
 		JButton btnExit = new JButton("\u9000\u51FA");
 		btnExit.addActionListener(new ActionListener() {
 			/**
-			 * ´¥·¢ÍË³ö°´Å¥ÍË³öÊÂ¼ş
+			 * è§¦å‘é€€å‡ºæŒ‰é’®é€€å‡ºäº‹ä»¶
 			 */
 			public void actionPerformed(ActionEvent e) {
 				frmKtv.dispose();
 			}
 		});
-		btnExit.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnExit.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnExit.setBounds(236, 338, 152, 48);
 		userPanel.add(btnExit);
 
-		// ¹ÜÀíÔ±·ÖÒ³
+		// ç®¡ç†å‘˜åˆ†é¡µ
 		JPanel adminPanel = new JPanel();
 		tabbedPane.addTab("\u7BA1\u7406\u5458", null, adminPanel, null);
 		adminPanel.setLayout(null);
 
 		JLabel lblAdminLoginLabel = new JLabel("\u7BA1\u7406\u5458\u767B\u5F55");
-		lblAdminLoginLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 40));
+		lblAdminLoginLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 40));
 		lblAdminLoginLabel.setBounds(210, 54, 223, 75);
 		adminPanel.add(lblAdminLoginLabel);
 
 		JLabel lblAdminAccountLabel = new JLabel("\u8D26\u53F7");
-		lblAdminAccountLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblAdminAccountLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblAdminAccountLabel.setBounds(187, 179, 48, 36);
 		adminPanel.add(lblAdminAccountLabel);
 
-		// ÓÃ»§Ãû
+		// ç”¨æˆ·å
 		accountTextField = new JTextField();
 		accountTextField.setBounds(258, 179, 207, 36);
 		adminPanel.add(accountTextField);
 		accountTextField.setColumns(10);
 
-		// ÃÜÂë
+		// å¯†ç 
 		passwordTextField = new JPasswordField();
 		passwordTextField.setColumns(10);
 		passwordTextField.setBounds(258, 241, 207, 36);
 		adminPanel.add(passwordTextField);
 
 		JLabel lblAdminPasswordLabel = new JLabel("\u5BC6\u7801");
-		lblAdminPasswordLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblAdminPasswordLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblAdminPasswordLabel.setBounds(187, 241, 48, 36);
 		adminPanel.add(lblAdminPasswordLabel);
 
 		JButton btnLogin = new JButton("\u767B\u5F55");
 		btnLogin.addActionListener(new ActionListener() {
-			// µÇÂ¼ÊÂ¼ş
+			// ç™»å½•äº‹ä»¶
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnLogin.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnLogin.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnLogin.setBounds(246, 330, 152, 48);
 		adminPanel.add(btnLogin);
 	}

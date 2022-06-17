@@ -61,25 +61,25 @@ public class DrinksServiceWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		frame.getContentPane().setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		frame.setTitle("\u9152\u6C34\u670D\u52A1");
-		frame.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		frame.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		frame.setBounds(100, 100, 471, 553);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		tabbedPane.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		tabbedPane.setBounds(10, 10, 437, 428);
 		frame.getContentPane().add(tabbedPane);
 
-		// Ê³ÎïÃæ°æ
+		// é£Ÿç‰©é¢ç‰ˆ
 		JPanel foodPanel = new JPanel();
 		tabbedPane.addTab("\u98DF\u7269", null, foodPanel, null);
 		foodPanel.setLayout(new CardLayout(0, 0));
 		JList<String> foodListComponent = new JList<String>();
-		foodListComponent.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		foodListComponent.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		DefaultListModel<String> foodListModel = new DefaultListModel<String>() {
 			private static final long serialVersionUID = 1L;
 
@@ -91,15 +91,15 @@ public class DrinksServiceWindow {
 			}
 		};
 		JPopupMenu foodPopupMenu = new JPopupMenu();
-		JMenuItem foodPopupMenuBuyItem = new JMenuItem("¹ºÂò");
+		JMenuItem foodPopupMenuBuyItem = new JMenuItem("è´­ä¹°");
 		foodPopupMenuBuyItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int op = JOptionPane.showConfirmDialog(foodListComponent,
-						String.format("È·¶¨¹ºÂò¡¾%s¡¿Âğ£¿\nÄú½«Ö§¸¶ %d Ôª", foodSelectedItem, Food.getFee(foodSelectedItem)), "È·ÈÏ¹ºÂò",
+						String.format("ç¡®å®šè´­ä¹°ã€%sã€‘å—ï¼Ÿ\næ‚¨å°†æ”¯ä»˜ %d å…ƒ", foodSelectedItem, Food.getFee(foodSelectedItem)), "ç¡®è®¤è´­ä¹°",
 						JOptionPane.YES_NO_OPTION);
 				if (op == JOptionPane.YES_OPTION) {
-					JOptionPane.showMessageDialog(foodListComponent, "ÄúÒÑ³É¹¦¹ºÂò£¬ÉÔºóËÍµ½£¡");
+					JOptionPane.showMessageDialog(foodListComponent, "æ‚¨å·²æˆåŠŸè´­ä¹°ï¼Œç¨åé€åˆ°ï¼");
 				}
 			}
 		});
@@ -108,19 +108,19 @@ public class DrinksServiceWindow {
 		foodListComponent.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 2) { // Ë«»÷ÊÂ¼ş
+				if (e.getClickCount() == 2) { // åŒå‡»äº‹ä»¶
 					String key = foodListComponent.getModel()
 							.getElementAt(foodListComponent.locationToIndex(e.getPoint()));
 					int op = JOptionPane.showConfirmDialog(foodListComponent,
-							String.format("È·¶¨¹ºÂò¡¾%s¡¿Âğ£¿\nÄú½«Ö§¸¶ %d Ôª", key, Food.getFee(key)), "È·ÈÏ¹ºÂò",
+							String.format("ç¡®å®šè´­ä¹°ã€%sã€‘å—ï¼Ÿ\næ‚¨å°†æ”¯ä»˜ %d å…ƒ", key, Food.getFee(key)), "ç¡®è®¤è´­ä¹°",
 							JOptionPane.YES_NO_OPTION);
 					if (op == JOptionPane.YES_OPTION) {
-						JOptionPane.showMessageDialog(foodListComponent, "ÄúÒÑ³É¹¦¹ºÂò£¬ÉÔºóËÍµ½£¡");
+						JOptionPane.showMessageDialog(foodListComponent, "æ‚¨å·²æˆåŠŸè´­ä¹°ï¼Œç¨åé€åˆ°ï¼");
 					}
-				} else if (e.getButton() == MouseEvent.BUTTON3) { // ÓÒ¼ü
+				} else if (e.getButton() == MouseEvent.BUTTON3) { // å³é”®
 					int itemIndex = foodListComponent.locationToIndex(e.getPoint());
-					foodListComponent.setSelectedIndex(itemIndex); // ÉèÖÃ½¹µã
-					foodSelectedItem = foodListModel.getElementAt(itemIndex); // ÉèÖÃÑ¡ÖĞ Item
+					foodListComponent.setSelectedIndex(itemIndex); // è®¾ç½®ç„¦ç‚¹
+					foodSelectedItem = foodListModel.getElementAt(itemIndex); // è®¾ç½®é€‰ä¸­ Item
 					foodPopupMenu.show(foodListComponent, e.getX(), e.getY());
 				}
 			}
@@ -131,13 +131,13 @@ public class DrinksServiceWindow {
 				JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		foodPanel.add(foodListComponentScrollPane);
 
-		// ¾ÆË®
+		// é…’æ°´
 		JPanel drinksPanel = new JPanel();
 		tabbedPane.addTab("\u9152\u6C34", null, drinksPanel, null);
 		drinksPanel.setLayout(new CardLayout(0, 0));
 
 		JList<String> drinkListComponent = new JList<String>();
-		drinkListComponent.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		drinkListComponent.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		DefaultListModel<String> drinksListModel = new DefaultListModel<String>() {
 			private static final long serialVersionUID = 1L;
 
@@ -149,16 +149,16 @@ public class DrinksServiceWindow {
 			}
 		};
 		JPopupMenu drinksPopupMenu = new JPopupMenu();
-		JMenuItem drinksPopupMenuBuyItem = new JMenuItem("¹ºÂò");
+		JMenuItem drinksPopupMenuBuyItem = new JMenuItem("è´­ä¹°");
 		drinksPopupMenuBuyItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println(drinksSelectedItem);
 				int op = JOptionPane.showConfirmDialog(drinkListComponent,
-						String.format("È·¶¨¹ºÂò¡¾%s¡¿Âğ£¿\nÄú½«Ö§¸¶ %d Ôª", drinksSelectedItem, Drinks.getFee(drinksSelectedItem)),
-						"È·ÈÏ¹ºÂò", JOptionPane.YES_NO_OPTION);
+						String.format("ç¡®å®šè´­ä¹°ã€%sã€‘å—ï¼Ÿ\næ‚¨å°†æ”¯ä»˜ %d å…ƒ", drinksSelectedItem, Drinks.getFee(drinksSelectedItem)),
+						"ç¡®è®¤è´­ä¹°", JOptionPane.YES_NO_OPTION);
 				if (op == JOptionPane.YES_OPTION) {
-					JOptionPane.showMessageDialog(drinkListComponent, "ÄúÒÑ³É¹¦¹ºÂò£¬ÉÔºóËÍµ½£¡");
+					JOptionPane.showMessageDialog(drinkListComponent, "æ‚¨å·²æˆåŠŸè´­ä¹°ï¼Œç¨åé€åˆ°ï¼");
 				}
 			}
 		});
@@ -167,19 +167,19 @@ public class DrinksServiceWindow {
 		drinkListComponent.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 2) { // Ë«»÷ÊÂ¼ş
+				if (e.getClickCount() == 2) { // åŒå‡»äº‹ä»¶
 					String key = drinkListComponent.getModel()
 							.getElementAt(drinkListComponent.locationToIndex(e.getPoint()));
 					int op = JOptionPane.showConfirmDialog(drinkListComponent,
-							String.format("È·¶¨¹ºÂò¡¾%s¡¿Âğ£¿\nÄú½«Ö§¸¶ %d Ôª", key, Drinks.getFee(key)), "È·ÈÏ¹ºÂò",
+							String.format("ç¡®å®šè´­ä¹°ã€%sã€‘å—ï¼Ÿ\næ‚¨å°†æ”¯ä»˜ %d å…ƒ", key, Drinks.getFee(key)), "ç¡®è®¤è´­ä¹°",
 							JOptionPane.YES_NO_OPTION);
 					if (op == JOptionPane.YES_OPTION) {
-						JOptionPane.showMessageDialog(drinkListComponent, "ÄúÒÑ³É¹¦¹ºÂò£¬ÉÔºóËÍµ½£¡");
+						JOptionPane.showMessageDialog(drinkListComponent, "æ‚¨å·²æˆåŠŸè´­ä¹°ï¼Œç¨åé€åˆ°ï¼");
 					}
-				} else if (e.getButton() == MouseEvent.BUTTON3) { // ÓÒ¼ü
+				} else if (e.getButton() == MouseEvent.BUTTON3) { // å³é”®
 					int itemIndex = drinkListComponent.locationToIndex(e.getPoint());
-					drinkListComponent.setSelectedIndex(itemIndex); // ÉèÖÃ½¹µã
-					drinksSelectedItem = drinksListModel.getElementAt(itemIndex); // ÉèÖÃÑ¡ÖĞ Item
+					drinkListComponent.setSelectedIndex(itemIndex); // è®¾ç½®ç„¦ç‚¹
+					drinksSelectedItem = drinksListModel.getElementAt(itemIndex); // è®¾ç½®é€‰ä¸­ Item
 					drinksPopupMenu.show(drinkListComponent, e.getX(), e.getY());
 				}
 			}
@@ -192,53 +192,53 @@ public class DrinksServiceWindow {
 
 		JButton btnServiceRequestButton = new JButton("\u8BF7\u6C42\u670D\u52A1");
 		btnServiceRequestButton.addActionListener(new ActionListener() {
-			// ÇëÇó·şÎñ
+			// è¯·æ±‚æœåŠ¡
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(frame, "ÇëÉÔºó£¬·şÎñÈËÔ±ÂíÉÏ¾Íµ½¡£");
+				JOptionPane.showMessageDialog(frame, "è¯·ç¨åï¼ŒæœåŠ¡äººå‘˜é©¬ä¸Šå°±åˆ°ã€‚");
 			}
 		});
-		btnServiceRequestButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		btnServiceRequestButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		btnServiceRequestButton.setBounds(34, 451, 182, 23);
 		frame.getContentPane().add(btnServiceRequestButton);
 
 		JButton btnBackToMainPageButton = new JButton("\u8FD4\u56DE\u4E3B\u754C\u9762");
 		btnBackToMainPageButton.addActionListener(new ActionListener() {
-			// ·µ»ØÖ÷½çÃæ
+			// è¿”å›ä¸»ç•Œé¢
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnBackToMainPageButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		btnBackToMainPageButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		btnBackToMainPageButton.setBounds(246, 448, 174, 23);
 		frame.getContentPane().add(btnBackToMainPageButton);
 
 		JButton btnGetConsumeTimeButton = new JButton("\u67E5\u770B\u6D88\u8D39\u65F6\u95F4");
 		btnGetConsumeTimeButton.addActionListener(new ActionListener() {
-			// ²é¿´Ïû·ÑÊ±¼ä
+			// æŸ¥çœ‹æ¶ˆè´¹æ—¶é—´
 			public void actionPerformed(ActionEvent e) {
 				LocalDateTime currentTime = LocalDateTime.now();
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 				JOptionPane.showMessageDialog(frame, String.format(
-						"ÄúºÃ¡£\n°üÏáµÈ¼¶£º%s\n¼Æ·ÑÄ£Ê½£º%d Ôª/Ê±\nÈë³¡Ê±¼ä£º%s\nÒÑÊ¹ÓÃ %,d Ê±, %d ·Ö¡£¼Æ %,d Ôª£¨²»ÂúÒ»Ğ¡Ê±°´Ò»Ğ¡Ê±¼ÆËã£©", State.room,
+						"æ‚¨å¥½ã€‚\nåŒ…å¢ç­‰çº§ï¼š%s\nè®¡è´¹æ¨¡å¼ï¼š%d å…ƒ/æ—¶\nå…¥åœºæ—¶é—´ï¼š%s\nå·²ä½¿ç”¨ %,d æ—¶, %d åˆ†ã€‚è®¡ %,d å…ƒï¼ˆä¸æ»¡ä¸€å°æ—¶æŒ‰ä¸€å°æ—¶è®¡ç®—ï¼‰", State.room,
 						Room.getFee(State.room), State.startDate.format(formatter),
 						Duration.between(State.startDate, currentTime).toHours(),
 						Duration.between(State.startDate, currentTime).toMinutesPart(),
 						(Duration.between(State.startDate, currentTime).toHours() + 1) * Room.getFee(State.room)),
-						"Ïû·ÑÊ±¼ä", JOptionPane.PLAIN_MESSAGE);
+						"æ¶ˆè´¹æ—¶é—´", JOptionPane.PLAIN_MESSAGE);
 			}
 		});
-		btnGetConsumeTimeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		btnGetConsumeTimeButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		btnGetConsumeTimeButton.setBounds(34, 484, 182, 23);
 		frame.getContentPane().add(btnGetConsumeTimeButton);
 
 		JButton btnViewFeeScaleButton = new JButton("\u6536\u8D39\u6807\u51C6");
 		btnViewFeeScaleButton.addActionListener(new ActionListener() {
-			// ²é¿´ÊÕ·Ñ±ê×¼
+			// æŸ¥çœ‹æ”¶è´¹æ ‡å‡†
 			public void actionPerformed(ActionEvent e) {
 				FeeScaleWindow.main(null);
 			}
 		});
-		btnViewFeeScaleButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 13));
+		btnViewFeeScaleButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 13));
 		btnViewFeeScaleButton.setBounds(246, 481, 174, 23);
 		frame.getContentPane().add(btnViewFeeScaleButton);
 	}

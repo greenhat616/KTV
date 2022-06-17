@@ -50,18 +50,18 @@ public class AdminManageWindow {
 		frame.getContentPane().setLayout(null);
 
 		searchTextField = new JTextField();
-		searchTextField.setFont(new Font("΢���ź�", Font.PLAIN, 15));
+		searchTextField.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		searchTextField.setBounds(138, 29, 284, 34);
 		frame.getContentPane().add(searchTextField);
 		searchTextField.setColumns(10);
 
 		JButton btnSearchButton = new JButton("\u641C\u7D22");
-		btnSearchButton.setFont(new Font("΢���ź�", Font.PLAIN, 15));
+		btnSearchButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnSearchButton.setBounds(452, 29, 97, 34);
 		frame.getContentPane().add(btnSearchButton);
 
 		JList list = new JList();
-		list.setFont(new Font("΢���ź�", Font.PLAIN, 14));
+		list.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		list.setModel(new AbstractListModel() {
 			String[] values = new String[] { "1", "2", "3" };
 
@@ -77,12 +77,12 @@ public class AdminManageWindow {
 		frame.getContentPane().add(list);
 
 		btnAddSongButton = new JButton("\u6DFB\u52A0\u6B4C\u66F2");
-		btnAddSongButton.setFont(new Font("΢���ź�", Font.PLAIN, 15));
+		btnAddSongButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnAddSongButton.setBounds(96, 367, 140, 34);
 		frame.getContentPane().add(btnAddSongButton);
 
 		btnAddArtistButton = new JButton("\u6DFB\u52A0\u6B4C\u624B");
-		btnAddArtistButton.setFont(new Font("΢���ź�", Font.PLAIN, 15));
+		btnAddArtistButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnAddArtistButton.setBounds(317, 367, 140, 34);
 		frame.getContentPane().add(btnAddArtistButton);
 	}

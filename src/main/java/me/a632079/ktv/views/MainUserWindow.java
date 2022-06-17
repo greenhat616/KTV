@@ -60,53 +60,53 @@ public class MainUserWindow {
 		frame.getContentPane().add(panel);
 
 		JButton btnOrderSongButton = new JButton("\u5206\u7C7B\u9009\u6B4C");
-		btnOrderSongButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnOrderSongButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnOrderSongButton.setBounds(44, 296, 117, 45);
 		frame.getContentPane().add(btnOrderSongButton);
 
 		JButton btnSongQueueButton = new JButton("\u5DF2\u70B9\u6B4C\u66F2");
-		btnSongQueueButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnSongQueueButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnSongQueueButton.setBounds(221, 296, 117, 45);
 		frame.getContentPane().add(btnSongQueueButton);
 
 		JButton btnPlayRankingButton = new JButton("\u64AD\u653E\u6392\u884C");
-		btnPlayRankingButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnPlayRankingButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnPlayRankingButton.setBounds(400, 296, 117, 45);
 		frame.getContentPane().add(btnPlayRankingButton);
 
 		JButton btnDrinksServiceButton = new JButton("\u9152\u6C34\u670D\u52A1");
 		btnDrinksServiceButton.addActionListener(new ActionListener() {
-			// ¾ÆË®·şÎñ
+			// é…’æ°´æœåŠ¡
 			public void actionPerformed(ActionEvent e) {
 				DrinksServiceWindow.main(null);
 			}
 		});
-		btnDrinksServiceButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnDrinksServiceButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnDrinksServiceButton.setBounds(579, 296, 117, 45);
 		frame.getContentPane().add(btnDrinksServiceButton);
 
 		JButton btnPlayedListButton = new JButton("\u5DF2\u64AD");
-		btnPlayedListButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnPlayedListButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnPlayedListButton.setBounds(44, 376, 117, 45);
 		frame.getContentPane().add(btnPlayedListButton);
 
 		JButton btnNextSongButton = new JButton("\u4E0B\u4E00\u9996");
-		btnNextSongButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnNextSongButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnNextSongButton.setBounds(187, 376, 117, 45);
 		frame.getContentPane().add(btnNextSongButton);
 
 		JButton btnReplayButton = new JButton("\u91CD\u64AD");
-		btnReplayButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnReplayButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnReplayButton.setBounds(326, 376, 117, 45);
 		frame.getContentPane().add(btnReplayButton);
 
 		JButton btnPauseOrContinueButton = new JButton("\u6682\u505C");
-		btnPauseOrContinueButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnPauseOrContinueButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnPauseOrContinueButton.setBounds(463, 376, 117, 45);
 		frame.getContentPane().add(btnPauseOrContinueButton);
 
 		JButton btnPlayListButton = new JButton("\u5217\u8868");
-		btnPlayListButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
+		btnPlayListButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
 		btnPlayListButton.setBounds(592, 376, 117, 45);
 		frame.getContentPane().add(btnPlayListButton);
 	}

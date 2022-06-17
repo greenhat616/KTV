@@ -3,22 +3,22 @@ package me.a632079.ktv.models;
 import java.util.HashMap;
 
 public class Drinks {
-	static String[] drinks = { "°ÙÍşÆ¡¾Æ£¨Æ¿×°£©", "À¶ÂíÆ¡¾Æ£¨Æ¿×°£©", "ººË¹¸ÉÆ¡£¨Æ¿×°£©", "¸ÉºìÆÏÌÑ¾Æ", "¶ş¹øÍ·", "¹ûÁ£³È£¨Ğ¡Æ¿£©", "¿É¿Ú¿ÉÀÖ£¨Ìı×°£©", "°ÙÊÂ¿ÉÀÖ£¨Ìı×°£©" };
+	static String[] drinks = { "ç™¾å¨å•¤é…’ï¼ˆç“¶è£…ï¼‰", "è“é©¬å•¤é…’ï¼ˆç“¶è£…ï¼‰", "æ±‰æ–¯å¹²å•¤ï¼ˆç“¶è£…ï¼‰", "å¹²çº¢è‘¡è„é…’", "äºŒé”…å¤´", "æœç²’æ©™ï¼ˆå°ç“¶ï¼‰", "å¯å£å¯ä¹ï¼ˆå¬è£…ï¼‰", "ç™¾äº‹å¯ä¹ï¼ˆå¬è£…ï¼‰" };
 	static HashMap<String, Integer> drinksFee;
 	static {
 		drinksFee = new HashMap<String, Integer>();
-		drinksFee.put("°ÙÍşÆ¡¾Æ£¨Æ¿×°£©", 20);
-		drinksFee.put("À¶ÂíÆ¡¾Æ£¨Æ¿×°£©", 20);
-		drinksFee.put("ººË¹¸ÉÆ¡£¨Æ¿×°£©", 15);
-		drinksFee.put("¸ÉºìÆÏÌÑ¾Æ", 80);
-		drinksFee.put("¶ş¹øÍ·", 40);
-		drinksFee.put("¹ûÁ£³È£¨Ğ¡Æ¿£©", 5);
-		drinksFee.put("¿É¿Ú¿ÉÀÖ£¨Ìı×°£©", 5);
-		drinksFee.put("°ÙÊÂ¿ÉÀÖ£¨Ìı×°£©", 5);
+		drinksFee.put("ç™¾å¨å•¤é…’ï¼ˆç“¶è£…ï¼‰", 20);
+		drinksFee.put("è“é©¬å•¤é…’ï¼ˆç“¶è£…ï¼‰", 20);
+		drinksFee.put("æ±‰æ–¯å¹²å•¤ï¼ˆç“¶è£…ï¼‰", 15);
+		drinksFee.put("å¹²çº¢è‘¡è„é…’", 80);
+		drinksFee.put("äºŒé”…å¤´", 40);
+		drinksFee.put("æœç²’æ©™ï¼ˆå°ç“¶ï¼‰", 5);
+		drinksFee.put("å¯å£å¯ä¹ï¼ˆå¬è£…ï¼‰", 5);
+		drinksFee.put("ç™¾äº‹å¯ä¹ï¼ˆå¬è£…ï¼‰", 5);
 	}
 
 	/**
-	 * Í¨¹ı°üÏáÃû³Æ»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡åŒ…å¢åç§°è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -28,7 +28,7 @@ public class Drinks {
 	}
 
 	/**
-	 * Í¨¹ı°üÏáÊı×éµÄË÷Òı»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡åŒ…å¢æ•°ç»„çš„ç´¢å¼•è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -44,7 +44,7 @@ public class Drinks {
 	public static String getFeesDescription() {
 		StringBuffer buff = new StringBuffer();
 		for (String v : drinks) {
-			buff.append(String.format("%s£º%d Ôª\n", v, getFee(v)));
+			buff.append(String.format("%sï¼š%d å…ƒ\n", v, getFee(v)));
 		}
 		return buff.toString();
 	}

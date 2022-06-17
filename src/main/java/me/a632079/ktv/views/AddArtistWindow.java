@@ -50,82 +50,82 @@ public class AddArtistWindow {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("\u6DFB\u52A0\u6B4C\u624B");
-		frame.getContentPane().setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		frame.getContentPane().setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		frame.setBounds(100, 100, 463, 481);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
 
 		JLabel lblArtistNameLabel = new JLabel("\u6B4C\u624B\u540D");
-		lblArtistNameLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblArtistNameLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblArtistNameLabel.setBounds(59, 58, 79, 56);
 		frame.getContentPane().add(lblArtistNameLabel);
 
 		artistNameTextField = new JTextField();
-		artistNameTextField.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		artistNameTextField.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblArtistNameLabel.setLabelFor(artistNameTextField);
 		artistNameTextField.setBounds(151, 58, 180, 56);
 		frame.getContentPane().add(artistNameTextField);
 		artistNameTextField.setColumns(10);
 
 		artistRegionTextField = new JTextField();
-		artistRegionTextField.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		artistRegionTextField.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		artistRegionTextField.setColumns(10);
 		artistRegionTextField.setBounds(151, 125, 180, 56);
 		frame.getContentPane().add(artistRegionTextField);
 
 		JLabel lblArtistRegionLabel = new JLabel("\u6B4C\u624B\u5730\u533A");
 		lblArtistRegionLabel.setLabelFor(artistRegionTextField);
-		lblArtistRegionLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblArtistRegionLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblArtistRegionLabel.setBounds(59, 125, 79, 56);
 		frame.getContentPane().add(lblArtistRegionLabel);
 
 		artistShortNameTextField = new JTextField();
-		artistShortNameTextField.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		artistShortNameTextField.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		artistShortNameTextField.setColumns(10);
 		artistShortNameTextField.setBounds(151, 191, 180, 56);
 		frame.getContentPane().add(artistShortNameTextField);
 
 		JLabel lblArtistShortNameLabel = new JLabel("\u6B4C\u624B\u7F29\u5199");
-		lblArtistShortNameLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblArtistShortNameLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblArtistShortNameLabel.setBounds(59, 191, 79, 56);
 		frame.getContentPane().add(lblArtistShortNameLabel);
 
 		artistPosterTextField = new JTextField();
-		artistPosterTextField.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		artistPosterTextField.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		artistPosterTextField.setColumns(10);
 		artistPosterTextField.setBounds(151, 257, 108, 56);
 		frame.getContentPane().add(artistPosterTextField);
 
 		JLabel lblArtistPosterLabel = new JLabel("\u6D77\u62A5");
-		lblArtistPosterLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		lblArtistPosterLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		lblArtistPosterLabel.setBounds(59, 257, 79, 56);
 		frame.getContentPane().add(lblArtistPosterLabel);
 
 		JButton btnFileSelectButton = new JButton("\u9009\u62E9");
 		btnFileSelectButton.addActionListener(new ActionListener() {
-			// Ñ¡ÔñÎÄ¼ş
+			// é€‰æ‹©æ–‡ä»¶
 			public void actionPerformed(ActionEvent e) {
 				showFileSelectorDialog(frame, artistPosterTextField);
 			}
 		});
-		btnFileSelectButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnFileSelectButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnFileSelectButton.setBounds(275, 262, 97, 51);
 		frame.getContentPane().add(btnFileSelectButton);
 
 		JButton btnConfirmButton = new JButton("\u6DFB\u52A0");
 		btnConfirmButton.addActionListener(new ActionListener() {
-			// Ìí¼Ó¸èÊÖ
+			// æ·»åŠ æ­Œæ‰‹
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnConfirmButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnConfirmButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnConfirmButton.setBounds(85, 360, 108, 51);
 		frame.getContentPane().add(btnConfirmButton);
 
 		JButton btnResetButton = new JButton("\u91CD\u7F6E");
 		btnResetButton.addActionListener(new ActionListener() {
-			// ÖØÖÃÄÚÈİ
+			// é‡ç½®å†…å®¹
 			public void actionPerformed(ActionEvent e) {
 				artistNameTextField.setText(null);
 				artistRegionTextField.setText(null);
@@ -133,7 +133,7 @@ public class AddArtistWindow {
 				artistPosterTextField.setText(null);
 			}
 		});
-		btnResetButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 15));
+		btnResetButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 15));
 		btnResetButton.setBounds(234, 360, 108, 51);
 		frame.getContentPane().add(btnResetButton);
 	}
@@ -142,9 +142,9 @@ public class AddArtistWindow {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setCurrentDirectory(new File("."));
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		fileChooser.setMultiSelectionEnabled(false); // Ö»ÄÜÑ¡ÔñÒ»¸öÎÄ¼ş
-		fileChooser.setFileFilter(new FileNameExtensionFilter("Í¼Æ¬ÎÄ¼ş(*.png, *.jpg, *.jpeg)", "png", "jpg", "jpeg")); // ¿ÉÑ¡ÔñµÄÎÄ¼ş
-		int result = fileChooser.showOpenDialog(frame); // ¶ÂÈû´°¿Ú
+		fileChooser.setMultiSelectionEnabled(false); // åªèƒ½é€‰æ‹©ä¸€ä¸ªæ–‡ä»¶
+		fileChooser.setFileFilter(new FileNameExtensionFilter("å›¾ç‰‡æ–‡ä»¶(*.png, *.jpg, *.jpeg)", "png", "jpg", "jpeg")); // å¯é€‰æ‹©çš„æ–‡ä»¶
+		int result = fileChooser.showOpenDialog(frame); // å µå¡çª—å£
 
 		if (result == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();

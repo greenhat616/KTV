@@ -3,21 +3,21 @@ package me.a632079.ktv.models;
 import java.util.HashMap;
 
 public class Room {
-	static String[] roomList = { "Ááçç°ü", "Ğ¡°ü", "ÖĞ°ü", "´ó°ü", "ÉÌÎñ°ü", "×ÜÍ³°ü" };
+	static String[] roomList = { "ç²ç‘åŒ…", "å°åŒ…", "ä¸­åŒ…", "å¤§åŒ…", "å•†åŠ¡åŒ…", "æ€»ç»ŸåŒ…" };
 	static HashMap<String, Integer> roomFee;
 	static {
-		// °ü¼äÀàĞÍ: Ã¿Ğ¡Ê±¸¶·Ñ£¨²»×ãÒ»Ğ¡Ê±°´Ò»Ğ¡Ê±¼ÆËã£©
+		// åŒ…é—´ç±»å‹: æ¯å°æ—¶ä»˜è´¹ï¼ˆä¸è¶³ä¸€å°æ—¶æŒ‰ä¸€å°æ—¶è®¡ç®—ï¼‰
 		roomFee = new HashMap<String, Integer>();
-		roomFee.put("Ááçç°ü", 30);
-		roomFee.put("Ğ¡°ü", 50);
-		roomFee.put("ÖĞ°ü", 60);
-		roomFee.put("´ó°ü", 70);
-		roomFee.put("ÉÌÎñ°ü", 100);
-		roomFee.put("×ÜÍ³°ü", 150);
+		roomFee.put("ç²ç‘åŒ…", 30);
+		roomFee.put("å°åŒ…", 50);
+		roomFee.put("ä¸­åŒ…", 60);
+		roomFee.put("å¤§åŒ…", 70);
+		roomFee.put("å•†åŠ¡åŒ…", 100);
+		roomFee.put("æ€»ç»ŸåŒ…", 150);
 	};
 
 	/**
-	 * Í¨¹ı°üÏáÃû³Æ»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡åŒ…å¢åç§°è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -27,7 +27,7 @@ public class Room {
 	}
 
 	/**
-	 * Í¨¹ı°üÏáÊı×éµÄË÷Òı»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡åŒ…å¢æ•°ç»„çš„ç´¢å¼•è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -43,7 +43,7 @@ public class Room {
 	public static String getFeesDescription() {
 		StringBuffer buff = new StringBuffer();
 		for (String v : roomList) {
-			buff.append(String.format("%s£º%d Ôª/Ê±\n", v, getFee(v)));
+			buff.append(String.format("%sï¼š%d å…ƒ/æ—¶\n", v, getFee(v)));
 		}
 		return buff.toString();
 	}

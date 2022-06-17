@@ -54,40 +54,40 @@ public class FeeScaleWindow {
 		frame.setLocationRelativeTo(null);
 		
 		JTabbedPane feeTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		feeTabbedPane.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		feeTabbedPane.setFont(new Font("寰蒋闆呴粦", Font.PLAIN, 13));
 		frame.getContentPane().add(feeTabbedPane, "name_81269495444100");
 		
-		// 包厢费用说明
+		// 鍖呭帰璐圭敤璇存槑
 		JPanel roomFeePanel = new JPanel();
 		feeTabbedPane.addTab("\u5305\u53A2\u6536\u8D39", null, roomFeePanel, null);
 		roomFeePanel.setLayout(new CardLayout(0, 0));
 		JTextArea roomFeeTextArea = new JTextArea();
-		roomFeeTextArea.setFont(new Font("微软雅黑", Font.PLAIN, 15));
-		roomFeeTextArea.setEditable(false); // 禁止修改
-		roomFeeTextArea.setText(Room.getFeesDescription()); // 刷出费用说明
+		roomFeeTextArea.setFont(new Font("寰蒋闆呴粦", Font.PLAIN, 15));
+		roomFeeTextArea.setEditable(false); // 绂佹淇敼
+		roomFeeTextArea.setText(Room.getFeesDescription()); // 鍒峰嚭璐圭敤璇存槑
 		JScrollPane roomFeeTextAreaScrollPane = new JScrollPane(roomFeeTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		roomFeePanel.add(roomFeeTextAreaScrollPane, "name_81775096949000");
 		
-		// 食品收费说明
+		// 椋熷搧鏀惰垂璇存槑
 		JPanel foodFeePanel = new JPanel();
 		feeTabbedPane.addTab("\u98DF\u7269\u6536\u8D39", null, foodFeePanel, null);
 		foodFeePanel.setLayout(new CardLayout(0, 0));
 		JTextArea foodFeeTextArea = new JTextArea();
-		foodFeeTextArea.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		foodFeeTextArea.setFont(new Font("寰蒋闆呴粦", Font.PLAIN, 15));
 		foodFeeTextArea.setEditable(false);
 		foodFeeTextArea.setText(Food.getFeesDescription());
 		JScrollPane foodFeeTextAreaScrollPane = new JScrollPane(foodFeeTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		foodFeePanel.add(foodFeeTextAreaScrollPane, "name_81775096949001");
 		
 		
-		// 酒水收费说明
+		// 閰掓按鏀惰垂璇存槑
 		JPanel drinksFeePanel = new JPanel();
 		feeTabbedPane.addTab("\u9152\u6C34\u6536\u8D39", null, drinksFeePanel, null);
 		drinksFeePanel.setLayout(new CardLayout(0, 0));
 		JTextArea drinksFeeTextArea = new JTextArea();
 		drinksFeeTextArea.setEditable(false);
 		drinksFeeTextArea.setText(Drinks.getFeesDescription());
-		drinksFeeTextArea.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		drinksFeeTextArea.setFont(new Font("寰蒋闆呴粦", Font.PLAIN, 15));
 		JScrollPane drinksFeeTextAreaScrollPane = new JScrollPane(drinksFeeTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		drinksFeePanel.add(drinksFeeTextAreaScrollPane, "name_81775096949002");
 		

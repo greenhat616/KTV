@@ -6,19 +6,19 @@ import java.util.Map;
 import javax.management.ValueExp;
 
 public class Food {
-	static String[] food = { "ÎÀÁúÀ±Ìõ", "¿µÊ¦¸µºìÉÕÅ£ÈâÃæ£¨Í°×°£©", "¹Ï×Ó", "»¨Éú", "Ë®¹ûÆ´ÅÌ" };
+	static String[] food = { "å«é¾™è¾£æ¡", "åº·å¸ˆå‚…çº¢çƒ§ç‰›è‚‰é¢ï¼ˆæ¡¶è£…ï¼‰", "ç“œå­", "èŠ±ç”Ÿ", "æ°´æœæ‹¼ç›˜" };
 	static Map<String, Integer> foodFee;
 	static {
 		foodFee = new HashMap<String, Integer>();
-		foodFee.put("ÎÀÁúÀ±Ìõ", 2);
-		foodFee.put("¿µÊ¦¸µºìÉÕÅ£ÈâÃæ£¨Í°×°£©", 5);
-		foodFee.put("¹Ï×Ó", 4);
-		foodFee.put("»¨Éú", 4);
-		foodFee.put("Ë®¹ûÆ´ÅÌ", 20);
+		foodFee.put("å«é¾™è¾£æ¡", 2);
+		foodFee.put("åº·å¸ˆå‚…çº¢çƒ§ç‰›è‚‰é¢ï¼ˆæ¡¶è£…ï¼‰", 5);
+		foodFee.put("ç“œå­", 4);
+		foodFee.put("èŠ±ç”Ÿ", 4);
+		foodFee.put("æ°´æœæ‹¼ç›˜", 20);
 	}
 
 	/**
-	 * Í¨¹ıÊ³Æ·Ãû³Æ»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡é£Ÿå“åç§°è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -28,7 +28,7 @@ public class Food {
 	}
 
 	/**
-	 * Í¨¹ıÊ³Æ·Êı×éµÄË÷Òı»ñÈ¡·ÑÓÃ
+	 * é€šè¿‡é£Ÿå“æ•°ç»„çš„ç´¢å¼•è·å–è´¹ç”¨
 	 * 
 	 * @param key
 	 * @return
@@ -44,7 +44,7 @@ public class Food {
 	public static String getFeesDescription() {
 		StringBuffer buff = new StringBuffer();
 		for (String v : food) {
-			buff.append(String.format("%s£º%d Ôª\n", v, getFee(v)));
+			buff.append(String.format("%sï¼š%d å…ƒ\n", v, getFee(v)));
 		}
 		return buff.toString();
 	}
