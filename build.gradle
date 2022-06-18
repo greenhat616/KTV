@@ -29,3 +29,8 @@ jar {
         attributes('Main-Class': 'me.a632079.ktv.Application')
     }
 }
+
+// 指定构建编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
