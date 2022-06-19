@@ -9,6 +9,7 @@ import java.io.IOException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import me.a632079.ktv.models.Player;
 import me.a632079.ktv.views.components.ImagePanel;
@@ -36,14 +37,14 @@ public class MainUserWindow {
 	/**
 	 * Create the application.
 	 */
-	public MainUserWindow() {
+	public MainUserWindow() throws LineUnavailableException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() throws LineUnavailableException {
 		Player player = new Player();
 
 		frame = new JFrame();
@@ -103,21 +104,60 @@ public class MainUserWindow {
 		btnNextSongButton.setBounds(187, 376, 117, 45);
 		frame.getContentPane().add(btnNextSongButton);
 
-		btnNextSongButton.addActionListener(e -> player.play());
-
 		// 重播
 		JButton btnReplayButton = new JButton("\u91CD\u64AD");
 		btnReplayButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnReplayButton.setBounds(326, 376, 117, 45);
 		frame.getContentPane().add(btnReplayButton);
 
-		// 暂停
-		JButton btnPauseOrContinueButton = new JButton("\u6682\u505C");
+		// 播放 & 暂停
+		JButton btnPauseOrContinueButton = new JButton("播放");
 		btnPauseOrContinueButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnPauseOrContinueButton.setBounds(463, 376, 117, 45);
 		frame.getContentPane().add(btnPauseOrContinueButton);
 
-		btnPauseOrContinueButton.addActionListener(e -> player.pause());
+		// 事件处理，丢这里是因为这个按钮定义在上方
+		btnPauseOrContinueButton.addActionListener(e -> { // 播放暂停按钮
+			if (player.getStatus() != player.STATUS_PLAYING) {
+				try {
+					player.play();
+				} catch (Player.ListEmptyException ex) {
+					JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
+					return;
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				btnPauseOrContinueButton.setText("暂停");
+			} else {
+				player.pause();
+				btnPauseOrContinueButton.setText("播放");
+			}
+		});
+
+		btnReplayButton.addActionListener(e -> { // 重播按钮处理事件
+			try {
+				Thread.sleep(200); // 延迟 200 毫秒
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			if (player.getStatus() == player.STATUS_PASUED) {
+				btnPauseOrContinueButton.setText("暂停");
+			}
+			player.replay();
+		});
+
+		btnNextSongButton.addActionListener(e -> {
+			try {
+				player.next();
+				btnPauseOrContinueButton.setText("暂停");
+			} catch (Player.ListEmptyException ex) {
+				JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
+				return;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		});
 
 		// 列表
 		JButton btnPlayListButton = new JButton("\u5217\u8868");
