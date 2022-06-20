@@ -42,14 +42,13 @@ public class AddSongWindow {
         });
     }
 
-    public static void startAsChildWindow (AdminManageWindow instance) {
+    public static void startAsChildWindow(AdminManageWindow instance) {
         EventQueue.invokeLater(() -> {
             try {
                 AddSongWindow window = new AddSongWindow();
                 window.frame.addWindowListener(new WindowAdapter() {
                     @Override
-                    public void windowClosing(WindowEvent e) {
-                        super.windowClosing(e);
+                    public void windowClosed(WindowEvent e) {
                         instance.doListUpdate();
                     }
                 });
