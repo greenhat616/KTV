@@ -76,6 +76,8 @@ public class MainUserWindow {
 		btnSongQueueButton.setBounds(221, 296, 117, 45);
 		frame.getContentPane().add(btnSongQueueButton);
 
+		btnSongQueueButton.addActionListener(e -> SongListWindow.main(null));
+
 		// 播放排行
 		JButton btnPlayRankingButton = new JButton("\u64AD\u653E\u6392\u884C");
 		btnPlayRankingButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
@@ -159,5 +161,7 @@ public class MainUserWindow {
 		btnPlayListButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnPlayListButton.setBounds(579, 376, 117, 45);
 		frame.getContentPane().add(btnPlayListButton);
+
+		btnPlayListButton.addActionListener(e -> SongListWindow.main(null));
 	}
 }
