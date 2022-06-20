@@ -1,5 +1,7 @@
 package me.a632079.ktv.models;
 
+import java.util.Map;
+
 // 歌曲类
 public class Song {
     private int id;
@@ -12,6 +14,15 @@ public class Song {
 
     public int getId() {
         return id;
+    }
+
+    Song(Map<String, Object> map) {
+        id = (int) map.get("id");
+        artist = (Artist) map.get("artist"); // 这里需要做一层转换
+        language = (String) map.get("language");
+        shortName = (String) map.get("short_name");
+        style = (String) map.get("style");
+        path = (String) map.get("path");
     }
 
     public String getName() {
