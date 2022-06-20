@@ -1,16 +1,16 @@
 package me.a632079.ktv.views;
 
+import me.a632079.ktv.utils.JdbcHelper;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.math.BigInteger;
+import java.sql.SQLException;
 
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class AddArtistWindow {
@@ -117,6 +117,32 @@ public class AddArtistWindow {
 		btnConfirmButton.addActionListener(new ActionListener() {
 			// 添加歌手
 			public void actionPerformed(ActionEvent e) {
+				String artistName = artistNameTextField.getText();
+				String artistRegion = artistRegionTextField.getText();
+				String artistShortName = artistShortNameTextField.getText();
+				String artistAvatar = artistPosterTextField.getText();
+				if (artistName.length() <= 0 || artistRegion.length() <= 0 || artistShortName.length() <= 0 || artistAvatar.length() <= 0) {
+					JOptionPane.showMessageDialog(frame, "所有字段不能为空！");
+					return;
+				}
+				try {
+					BigInteger id = (BigInteger) JdbcHelper.insertWithReturnPrimeKey("INSERT INTO `artists` (`name`, `region`, `short_name`, `avatar`) VALUES (?, ?, ?, ?)",
+							artistName,
+							artistRegion,
+							artistShortName,
+							artistAvatar
+					);
+
+					if (id.compareTo(BigInteger.valueOf(0)) <= 0) { // Id 为 BigInteger 类型，不能直接和 int 比较
+						JOptionPane.showMessageDialog(frame, "添加失败！", "错误", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					JOptionPane.showMessageDialog(frame, "添加成功！", "完成", JOptionPane.PLAIN_MESSAGE);
+					frame.dispose();
+				} catch (SQLException ex) {
+					JOptionPane.showMessageDialog(frame, "添加出错！", "错误", JOptionPane.ERROR_MESSAGE);
+					ex.printStackTrace();
+				}
 			}
 		});
 		btnConfirmButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));

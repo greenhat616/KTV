@@ -1,5 +1,6 @@
 package me.a632079.ktv.models;
 
+import java.math.BigInteger;
 import java.util.Map;
 
 // 歌手类
@@ -10,7 +11,15 @@ public class Artist {
     private String shortName;
     private String avatar;
 
-    Artist(Map<String, Object> map) {
+    public Artist() {
+        id = 0;
+        name = "未知";
+        region = "未知";
+        shortName = "WZ";
+        avatar = "";
+    }
+
+    public Artist(Map<String, Object> map) {
         id = (int) map.get("id");
         name = (String) map.get("name");
         region = (String) map.get("region");

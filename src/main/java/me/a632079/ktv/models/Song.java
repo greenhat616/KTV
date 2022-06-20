@@ -16,7 +16,7 @@ public class Song {
         return id;
     }
 
-    Song(Map<String, Object> map) {
+    public Song(Map<String, Object> map) {
         id = (int) map.get("id");
         artist = (Artist) map.get("artist"); // 这里需要做一层转换
         language = (String) map.get("language");

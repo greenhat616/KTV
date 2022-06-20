@@ -196,20 +196,20 @@ public class JdbcHelper {
      * 插入值后返回主键值
      *
      * @param sql       插入sql语句
-     * @param paramters 参数列表
+     * @param parameters 参数列表
      * @return 返回结果
      * @throws SQLException
      */
     public static Object insertWithReturnPrimeKey(String sql,
-                                                  Object... paramters) throws SQLException {
+                                                  Object... parameters) throws SQLException {
         ResultSet rs = null;
         Object result = null;
         try {
             conn = JdbcUnits.getConnection();
             preparedStatement = conn.prepareStatement(sql,
                     PreparedStatement.RETURN_GENERATED_KEYS);
-            for (int i = 0; i < paramters.length; i++) {
-                preparedStatement.setObject(i + 1, paramters[i]);
+            for (int i = 0; i < parameters.length; i++) {
+                preparedStatement.setObject(i + 1, parameters[i]);
             }
             preparedStatement.execute();
             rs = preparedStatement.getGeneratedKeys();

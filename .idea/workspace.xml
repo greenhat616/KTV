@@ -10,9 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9211346f-95e3-4132-a4ec-da0b92d9f68d" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/exceptions/ListEmptyException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/models/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/models/Artist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/models/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/models/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/utils/JdbcHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/utils/JdbcHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddArtistWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddArtistWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddSongWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddSongWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AdminManageWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AdminManageWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workdir/songs/a.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workdir/songs/b.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workdir/songs/c.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     "project.structure.last.edited": "问题",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "File.Encoding"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -134,7 +142,7 @@
       <workItem from="1655387623535" duration="109000" />
       <workItem from="1655465521421" duration="465000" />
       <workItem from="1655570371329" duration="4858000" />
-      <workItem from="1655690607218" duration="8447000" />
+      <workItem from="1655690607218" duration="19467000" />
     </task>
     <servers />
   </component>
