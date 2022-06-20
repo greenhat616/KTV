@@ -3,7 +3,9 @@ package me.a632079.ktv.models;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -20,6 +22,7 @@ public class Player {
 	private List<Song> playedList = new ArrayList<>();
 	private List<File> songs = new ArrayList<>(); // 测试用途
 	private List<File> playedSongs = new ArrayList<>(); // 测试用途
+	private Map<String, Integer> songsStatistic = new HashMap<>();
 	private Song playingSong = null;
 	private Clip instance = null;
 	private int pos = 0; // 播放位置
@@ -52,7 +55,7 @@ public class Player {
 			instance.setFramePosition(pos);
 			pos = 0; // 重置状态
 		} else if (!instance.isOpen()) { // 没有初始化音频流，需要先初始化
-			System.out.print("12321312312");
+			// System.out.print("12321312312");
 			if (songs.isEmpty()) {
 				throw new ListEmptyException();
 			}
