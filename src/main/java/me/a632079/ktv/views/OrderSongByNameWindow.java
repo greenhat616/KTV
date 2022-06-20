@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class OrderedSongListWindow {
+public class OrderSongByNameWindow {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class OrderedSongListWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OrderedSongListWindow window = new OrderedSongListWindow();
+					OrderSongByNameWindow window = new OrderSongByNameWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class OrderedSongListWindow {
 	/**
 	 * Create the application.
 	 */
-	public OrderedSongListWindow() {
+	public OrderSongByNameWindow() {
 		initialize();
 	}
 
@@ -36,8 +36,8 @@ public class OrderedSongListWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 483, 614);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 }

@@ -3,9 +3,12 @@ package me.a632079.ktv.models;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -18,7 +21,7 @@ public class Player {
 	// 播放列表
 	private List<Song> list = new ArrayList<>();
 	private List<Song> playedList = new ArrayList<>();
-	private Map<Integer, Integer> songsStatistic = new HashMap<>();
+	private Map<String, Integer> songsStatistic = new HashMap<>();
 	private Song playingSong = null;
 	private Clip instance = null;
 	private int pos = 0; // 播放位置
@@ -40,7 +43,7 @@ public class Player {
 
 	public void addSong(Song song) {
 		list.add(song);
-		songsStatistic.put(song.getId(), 0); // 统计表，初始化为 0
+		songsStatistic.put(song.getName(), 0); // 统计表，初始化为 0
 	}
 
 	public Song getPlayingSong() {
@@ -71,8 +74,8 @@ public class Player {
 			instance.open(ais);
 			ais.close();
 			playingSong = song; // 当前播放的歌曲信息
-			int count = songsStatistic.get(song.getId());
-			songsStatistic.put(song.getId(), count + 1); // 增加播放次数
+			int count = songsStatistic.get(song.getName());
+			songsStatistic.put(song.getName(), count + 1); // 增加播放次数
 		}
 		System.out.println(instance.getFramePosition());
 		instance.start();
@@ -102,8 +105,8 @@ public class Player {
 		instance.setFramePosition(0); // 设置到最初位置
 		instance.start();
 		currentStatus = STATUS_PLAYING;
-		int count = songsStatistic.get(playingSong.getId());
-		songsStatistic.put(playingSong.getId(), count + 1); // 增加播放次数
+		int count = songsStatistic.get(playingSong.getName());
+		songsStatistic.put(playingSong.getName(), count + 1); // 增加播放次数
 	}
 
 	/**
@@ -130,4 +133,35 @@ public class Player {
 		play(); // 调用播放方法
 	}
 
+	public List<String> getRankingStatisticMap() {
+		List<String> buffList = new ArrayList<>();
+		List<Map.Entry<String, Integer>> mapList = new ArrayList<Map.Entry<String, Integer>>(songsStatistic.entrySet());
+		Collections.sort(mapList, new Comparator<Map.Entry<String, Integer>>() {
+			// 降序排序
+			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+				return o2.getValue().compareTo(o1.getValue());
+			}
+		});
+
+		for (Map.Entry<String, Integer> value : mapList) {
+			buffList.add(String.format("%s: %d 次", value.getKey(), value.getValue()));
+		}
+		return buffList;
+	}
+
+	public List<Song> getPlayList() {
+		return list;
+	}
+
+	public List<Song> getPlayedList() {
+		return playedList;
+	}
+
+	public void removeSong(int id) {
+		list.remove(id);
+	}
+
+	public void topSong(int id) {
+		list.add(0, list.remove(id));
+	}
 }

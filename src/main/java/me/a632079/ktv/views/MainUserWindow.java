@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import me.a632079.ktv.models.Player;
+import me.a632079.ktv.models.State;
 import me.a632079.ktv.views.components.ImagePanel;
 
 public class MainUserWindow {
@@ -45,7 +46,7 @@ public class MainUserWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() throws LineUnavailableException {
-		Player player = new Player();
+		State.player = new Player();
 
 		frame = new JFrame();
 		frame.setTitle("\u7528\u6237\u754C\u9762");
@@ -92,35 +93,29 @@ public class MainUserWindow {
 		btnDrinksServiceButton.setBounds(579, 296, 117, 45);
 		frame.getContentPane().add(btnDrinksServiceButton);
 
-		// 已播
-		JButton btnPlayedListButton = new JButton("\u5DF2\u64AD");
-		btnPlayedListButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
-		btnPlayedListButton.setBounds(44, 376, 117, 45);
-		frame.getContentPane().add(btnPlayedListButton);
-
 		// 下一首
 		JButton btnNextSongButton = new JButton("\u4E0B\u4E00\u9996");
 		btnNextSongButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
-		btnNextSongButton.setBounds(187, 376, 117, 45);
+		btnNextSongButton.setBounds(44, 376, 117, 45);
 		frame.getContentPane().add(btnNextSongButton);
 
 		// 重播
 		JButton btnReplayButton = new JButton("\u91CD\u64AD");
 		btnReplayButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
-		btnReplayButton.setBounds(326, 376, 117, 45);
+		btnReplayButton.setBounds(221, 376, 117, 45);
 		frame.getContentPane().add(btnReplayButton);
 
 		// 播放 & 暂停
 		JButton btnPauseOrContinueButton = new JButton("播放");
 		btnPauseOrContinueButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
-		btnPauseOrContinueButton.setBounds(463, 376, 117, 45);
+		btnPauseOrContinueButton.setBounds(400, 376, 117, 45);
 		frame.getContentPane().add(btnPauseOrContinueButton);
 
 		// 事件处理，丢这里是因为这个按钮定义在上方
 		btnPauseOrContinueButton.addActionListener(e -> { // 播放暂停按钮
-			if (player.getStatus() != player.STATUS_PLAYING) {
+			if (State.player.getStatus() != State.player.STATUS_PLAYING) {
 				try {
-					player.play();
+					State.player.play();
 				} catch (Player.ListEmptyException ex) {
 					JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
 					return;
@@ -129,7 +124,7 @@ public class MainUserWindow {
 				}
 				btnPauseOrContinueButton.setText("暂停");
 			} else {
-				player.pause();
+				State.player.pause();
 				btnPauseOrContinueButton.setText("播放");
 			}
 		});
@@ -141,15 +136,15 @@ public class MainUserWindow {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			if (player.getStatus() == player.STATUS_PASUED) {
+			if (State.player.getStatus() == State.player.STATUS_PASUED) {
 				btnPauseOrContinueButton.setText("暂停");
 			}
-			player.replay();
+			State.player.replay();
 		});
 
 		btnNextSongButton.addActionListener(e -> {
 			try {
-				player.next();
+				State.player.next();
 				btnPauseOrContinueButton.setText("暂停");
 			} catch (Player.ListEmptyException ex) {
 				JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
@@ -162,7 +157,7 @@ public class MainUserWindow {
 		// 列表
 		JButton btnPlayListButton = new JButton("\u5217\u8868");
 		btnPlayListButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
-		btnPlayListButton.setBounds(592, 376, 117, 45);
+		btnPlayListButton.setBounds(579, 376, 117, 45);
 		frame.getContentPane().add(btnPlayListButton);
 	}
 }

@@ -1,7 +1,9 @@
 package me.a632079.ktv.views;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class OrderSongMainWindow {
@@ -36,8 +38,26 @@ public class OrderSongMainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+		frame.setTitle("分类点歌");
+		frame.getContentPane().setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		frame.getContentPane().setLayout(null);
 
+		JButton btnOrderByArtistButton = new JButton("歌手点歌");
+		btnOrderByArtistButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		btnOrderByArtistButton.setBounds(113, 25, 176, 37);
+		frame.getContentPane().add(btnOrderByArtistButton);
+
+		JButton btnOrderByNameButton = new JButton("歌名点歌");
+		btnOrderByNameButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		btnOrderByNameButton.setBounds(113, 96, 176, 37);
+		frame.getContentPane().add(btnOrderByNameButton);
+
+		JButton btnOrderByStyleButton = new JButton("风格点歌");
+		btnOrderByStyleButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		btnOrderByStyleButton.setBounds(113, 169, 176, 37);
+		frame.getContentPane().add(btnOrderByStyleButton);
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+	}
 }

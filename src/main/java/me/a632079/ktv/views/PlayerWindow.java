@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class SongRankingWindow {
+public class PlayerWindow {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class SongRankingWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SongRankingWindow window = new SongRankingWindow();
+					PlayerWindow window = new PlayerWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class SongRankingWindow {
 	/**
 	 * Create the application.
 	 */
-	public SongRankingWindow() {
+	public PlayerWindow() {
 		initialize();
 	}
 
