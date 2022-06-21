@@ -66,6 +66,11 @@ public class MainUserWindow {
 
 		// 分类选歌
 		JButton btnOrderSongButton = new JButton("\u5206\u7C7B\u9009\u6B4C");
+		btnOrderSongButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnOrderSongButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnOrderSongButton.setBounds(44, 296, 117, 45);
 		frame.getContentPane().add(btnOrderSongButton);
@@ -86,6 +91,9 @@ public class MainUserWindow {
 		btnPlayRankingButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnPlayRankingButton.setBounds(400, 296, 117, 45);
 		frame.getContentPane().add(btnPlayRankingButton);
+		btnPlayRankingButton.addActionListener(e -> {
+			PlayedSongRankingWindow.main(null);
+		});
 
 		JButton btnDrinksServiceButton = new JButton("\u9152\u6C34\u670D\u52A1");
 		btnDrinksServiceButton.addActionListener(new ActionListener() {
@@ -122,7 +130,7 @@ public class MainUserWindow {
 				try {
 					State.player.play();
 				} catch (Player.ListEmptyException ex) {
-					JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
+					JOptionPane.showMessageDialog(frame, "播放列表为空！");
 					return;
 				} catch (Exception e2) {
 					e2.printStackTrace();
@@ -152,7 +160,7 @@ public class MainUserWindow {
 				State.player.next();
 				btnPauseOrContinueButton.setText("暂停");
 			} catch (Player.ListEmptyException ex) {
-				JOptionPane.showMessageDialog(btnPauseOrContinueButton, "播放列表为空！");
+				JOptionPane.showMessageDialog(frame, "播放列表为空！");
 				return;
 			} catch (Exception ex) {
 				ex.printStackTrace();

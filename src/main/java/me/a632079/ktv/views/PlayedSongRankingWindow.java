@@ -66,8 +66,8 @@ public class PlayedSongRankingWindow {
 		textArea.setText(null);
 		StringBuffer buffer = new StringBuffer();
 		List<String> list = State.player.getRankingStatisticMap();
-		for (String line : list) {
-			buffer.append(line);
+		for (int i = 0; i < list.size(); i++) {
+			buffer.append("No" + i + ". " + list.get(i));
 			buffer.append('\n');
 		}
 		textArea.setText(buffer.toString());

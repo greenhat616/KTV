@@ -13,6 +13,8 @@ import java.util.Map.Entry;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
@@ -73,11 +75,34 @@ public class Player {
 			// instance = (Clip) AudioSystem.getLine(info);
 			instance.open(ais);
 			ais.close();
+			instance.addLineListener(new LineListener() {
+
+				@Override
+				public void update(LineEvent event) {
+					System.out.println("[Player] 触发事件：" + event.getType());
+					System.out.println("当前进度：" + instance.getFramePosition());
+					System.out.println("总进度：" + instance.getFrameLength());
+
+					// 当事件为停止时，且位置为最后位置，自动播放下一首
+					if (event.getType() == LineEvent.Type.STOP
+							&& instance.getFramePosition() >= instance.getFrameLength()) {
+						try {
+							System.out.println("开始播放下一首...");
+							next();
+						} catch (ListEmptyException e) {
+							// 不做处理，忽略
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			});
 			playingSong = song; // 当前播放的歌曲信息
 			int count = songsStatistic.get(song.getName());
 			songsStatistic.put(song.getName(), count + 1); // 增加播放次数
 		}
-		System.out.println(instance.getFramePosition());
+		// System.out.println(instance.getFramePosition());
+		System.out.println("正在播放：" + playingSong.getName());
 		instance.start();
 		currentStatus = STATUS_PLAYING;
 	}
@@ -121,6 +146,7 @@ public class Player {
 		if (list.isEmpty() || list.size() == 1) {
 			throw new ListEmptyException(); // 空列表应该抛出错误
 		} else if (currentStatus != STATUS_WAITING) {
+			System.out.println("[next]执行资源释放逻辑");
 			pause(); // 此方法内部已经处理了未开始播放的逻辑
 			instance.close(); // 销毁播放流
 			pos = 0; // pause 方法会修改 pos，这里需要重置
