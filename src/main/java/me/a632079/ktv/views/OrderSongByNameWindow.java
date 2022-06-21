@@ -83,9 +83,7 @@ public class OrderSongByNameWindow {
 				listModel.addElement(String.format("%s - %s - %s - %s", song.getName(), song.getArtist().getName(),
 						song.getStyle(), song.getLanguage()));
 			}
-		} catch (
-
-		SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

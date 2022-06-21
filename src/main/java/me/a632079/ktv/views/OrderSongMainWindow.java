@@ -62,9 +62,9 @@ public class OrderSongMainWindow {
 		btnOrderByNameButton.setBounds(113, 96, 176, 37);
 		frame.getContentPane().add(btnOrderByNameButton);
 
-		JButton btnOrderByStyleButton = new JButton("风格点歌");
+		JButton btnOrderByStyleButton = new JButton("语种点歌");
 		btnOrderByStyleButton.addActionListener(e -> {
-
+			OrderSongByLanguageWindow.main(null);
 		});
 		btnOrderByStyleButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnOrderByStyleButton.setBounds(113, 143, 176, 37);
