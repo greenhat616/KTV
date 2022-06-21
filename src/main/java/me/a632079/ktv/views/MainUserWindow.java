@@ -66,6 +66,11 @@ public class MainUserWindow {
 
 		// 分类选歌
 		JButton btnOrderSongButton = new JButton("\u5206\u7C7B\u9009\u6B4C");
+		btnOrderSongButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnOrderSongButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnOrderSongButton.setBounds(44, 296, 117, 45);
 		frame.getContentPane().add(btnOrderSongButton);

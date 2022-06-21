@@ -31,6 +31,7 @@ import me.a632079.ktv.models.Song;
 import me.a632079.ktv.models.State;
 import me.a632079.ktv.utils.JdbcHelper;
 
+
 public class OrderSongByNameWindow {
 
 	private JFrame frame;
@@ -107,6 +108,7 @@ public class OrderSongByNameWindow {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
+
 		PlainDocument document = new PlainDocument() {
 			private static final long serialVersionUID = 8418938668032019522L;
 
@@ -147,6 +149,7 @@ public class OrderSongByNameWindow {
 			}
 		});
 		btnNewButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+
 		btnNewButton.setBounds(361, 538, 98, 40);
 		frame.getContentPane().add(btnNewButton);
 
