@@ -146,7 +146,7 @@ public class Player {
 		if (list.isEmpty() || list.size() == 1) {
 			throw new ListEmptyException(); // 空列表应该抛出错误
 		} else if (currentStatus != STATUS_WAITING) {
-			System.out.println("[next]执行资源释放逻辑");
+			System.out.println("[next] 执行资源释放逻辑...");
 			pause(); // 此方法内部已经处理了未开始播放的逻辑
 			instance.close(); // 销毁播放流
 			pos = 0; // pause 方法会修改 pos，这里需要重置
@@ -159,11 +159,14 @@ public class Player {
 		play(); // 调用播放方法
 	}
 
+	// Map 转 List 以便进行排序，网上找的算法。
 	public List<String> getRankingStatisticMap() {
 		List<String> buffList = new ArrayList<>();
+		// 将 Map 转为 List<单个元素>
 		List<Map.Entry<String, Integer>> mapList = new ArrayList<Map.Entry<String, Integer>>(songsStatistic.entrySet());
 		Collections.sort(mapList, new Comparator<Map.Entry<String, Integer>>() {
 			// 降序排序
+			@Override
 			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
 				return o2.getValue().compareTo(o1.getValue());
 			}
@@ -183,52 +186,55 @@ public class Player {
 		return playedList;
 	}
 
-	public void removeSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, ListEmptyException, IOException {
-		if (playingSong == song) {
-			if (currentStatus == STATUS_PLAYING) {
-				pause();
-			}
-
+	public void removeSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+		System.out.println("[Player.remove] 开始删除歌曲：" + song.getName());
+		int buffCurrentStatus = currentStatus;
+		if (playingSong.getId() == song.getId()) {
+			System.out.println("[Player.remove] 发现同名歌曲，执行资源释放逻辑。");
+			pause();
 			instance.close();
+			pos = 0; // pause 方法会修改 pos，这里需要重置
 		}
 
-		list.removeIf(e -> e.equals(song));
+		list.removeIf(e -> e.getId() == song.getId());
 
-		if (currentStatus == STATUS_WAITING) {
+		currentStatus = STATUS_WAITING;
+
+		if (buffCurrentStatus == STATUS_WAITING || buffCurrentStatus == STATUS_PASUED) { // 未初始化或者 暂停 都不执行播放逻辑
 			return;
 		}
 
-		if (list.size() >= 1) {
-			currentStatus = STATUS_WAITING;
-
-			pos = 0;
+		try {
 			play();
+		} catch (ListEmptyException e) {
+			// 忽略该错误
 		}
+
 	}
 
 	public void topSong(int id) {
 		list.add(0, list.remove(id));
 	}
 
-	public void topSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, ListEmptyException, IOException {
-		boolean isPlaying = false;
-		if (currentStatus == STATUS_PLAYING) {
+	public void topSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+		int buffCurrentStatus = currentStatus;
+		if (currentStatus != STATUS_WAITING) {
 			pause();
-			isPlaying = true;
+			pos = 0;
 		}
 
+		instance.close(); // 销毁实例
 		list.remove(song);
 		list.add(0, song);
 
-		if (!isPlaying) {
+		currentStatus = STATUS_WAITING; // 重置状态
+		if (buffCurrentStatus != STATUS_PLAYING) {
 			return;
-		} else {
-			currentStatus = STATUS_WAITING;
 		}
-
-		pos = 0;
-		instance.close();
-
-		play();
+		try {
+			play();
+		} catch (ListEmptyException e) {
+			// 忽略
+		}
 	}
 }

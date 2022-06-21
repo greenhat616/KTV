@@ -1,18 +1,20 @@
 package me.a632079.ktv.views;
 
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
 import me.a632079.ktv.exceptions.ListEmptyException;
 import me.a632079.ktv.models.Artist;
 import me.a632079.ktv.models.Song;
 import me.a632079.ktv.utils.JdbcHelper;
-
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.math.BigInteger;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Map;
-
-import javax.swing.*;
 
 public class AdminManageWindow {
 
@@ -104,6 +106,7 @@ public class AdminManageWindow {
 		frame.getContentPane().add(btnAddArtistButton);
 	}
 
+	// 更新歌曲列表
 	public void doListUpdate() {
 		try {
 			java.util.List<Map<String, Object>> songsData = JdbcHelper.query("SELECT * FROM `songs`");
@@ -111,7 +114,8 @@ public class AdminManageWindow {
 			listModel.clear();
 			for (Map<String, Object> element : songsData) {
 				int id = (int) element.get("artist_id");
-				java.util.List<Map<String, Object>> artist = JdbcHelper.query("SELECT * FROM `artists` WHERE `id` = ?", id);
+				java.util.List<Map<String, Object>> artist = JdbcHelper.query("SELECT * FROM `artists` WHERE `id` = ?",
+						id);
 				if (artist.isEmpty()) {
 					throw new ListEmptyException();
 				}
@@ -126,12 +130,14 @@ public class AdminManageWindow {
 
 	public void doListUpdate(String name) {
 		try {
-			java.util.List<Map<String, Object>> songsData = JdbcHelper.query("SELECT * FROM `songs` WHERE `name` LIKE ? OR `short_name` LIKE ?", name, name);
+			java.util.List<Map<String, Object>> songsData = JdbcHelper
+					.query("SELECT * FROM `songs` WHERE `name` LIKE ? OR `short_name` LIKE ?", name, name);
 			songList.clear(); // 清除容器
 			listModel.clear();
 			for (Map<String, Object> element : songsData) {
 				int id = (int) element.get("artist_id");
-				java.util.List<Map<String, Object>> artist = JdbcHelper.query("SELECT * FROM `artists` WHERE `id` = ?", id);
+				java.util.List<Map<String, Object>> artist = JdbcHelper.query("SELECT * FROM `artists` WHERE `id` = ?",
+						id);
 				if (artist.isEmpty()) {
 					throw new ListEmptyException();
 				}
