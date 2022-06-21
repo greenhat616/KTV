@@ -2,6 +2,8 @@ package me.a632079.ktv.views;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -43,6 +45,11 @@ public class OrderSongMainWindow {
 		frame.getContentPane().setLayout(null);
 
 		JButton btnOrderByArtistButton = new JButton("歌手点歌");
+		btnOrderByArtistButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OrderSongByArtistWindow.main(null);
+			}
+		});
 		btnOrderByArtistButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnOrderByArtistButton.setBounds(113, 49, 176, 37);
 		frame.getContentPane().add(btnOrderByArtistButton);
@@ -60,7 +67,7 @@ public class OrderSongMainWindow {
 
 		});
 		btnOrderByStyleButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
-		btnOrderByStyleButton.setBounds(113, 169, 176, 37);
+		btnOrderByStyleButton.setBounds(113, 143, 176, 37);
 		frame.getContentPane().add(btnOrderByStyleButton);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

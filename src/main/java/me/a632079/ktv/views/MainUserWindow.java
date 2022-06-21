@@ -57,10 +57,11 @@ public class MainUserWindow {
 
 		ImagePanel panel = null;
 		try {
-			panel = new ImagePanel("./workdir/resources/main_user_panel.jpg");
+			panel = new ImagePanel("./workdir/resources/main_user_panel_sized.png", 729, 249);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		panel.setBounds(10, 10, 729, 249);
 		frame.getContentPane().add(panel);
 
@@ -68,7 +69,7 @@ public class MainUserWindow {
 		JButton btnOrderSongButton = new JButton("\u5206\u7C7B\u9009\u6B4C");
 		btnOrderSongButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 			}
 		});
 		btnOrderSongButton.setFont(new Font("微软雅黑", Font.BOLD, 15));

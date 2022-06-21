@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 public class ImagePanel extends JPanel {
 	private static final long serialVersionUID = -4914881061377544318L;
 	private BufferedImage image;
+	private int x = 0, y = 0;
 
 	public ImagePanel() throws IOException {
 		image = ImageIO.read(new File("./workdir/resources/default.jpg"));
@@ -21,10 +22,33 @@ public class ImagePanel extends JPanel {
 		image = ImageIO.read(new File(path));
 	}
 
+	public ImagePanel(String path, int x, int y) throws IOException {
+		super();
+		image = ImageIO.read(new File(path));
+		this.x = x;
+		this.y = y;
+	}
+
+	public void setImage(String path) throws IOException {
+		image = ImageIO.read(new File(path));
+		this.repaint(); // 重绘
+	}
+
+	public void setImage(String path, int x, int y) throws IOException {
+		image = ImageIO.read(new File(path));
+		this.x = x;
+		this.y = y;
+		this.repaint(); // 重绘
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+		if (x != 0 || y != 0) {
+			g.drawImage(image, 0, 0, x, y, this);
+		} else {
+			g.drawImage(image, 0, 0, this);
+		}
 	}
 
 }

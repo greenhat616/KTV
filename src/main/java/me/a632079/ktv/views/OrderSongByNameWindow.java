@@ -31,7 +31,6 @@ import me.a632079.ktv.models.Song;
 import me.a632079.ktv.models.State;
 import me.a632079.ktv.utils.JdbcHelper;
 
-
 public class OrderSongByNameWindow {
 
 	private JFrame frame;
@@ -108,7 +107,6 @@ public class OrderSongByNameWindow {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
-
 		PlainDocument document = new PlainDocument() {
 			private static final long serialVersionUID = 8418938668032019522L;
 
@@ -173,7 +171,7 @@ public class OrderSongByNameWindow {
 							JOptionPane.YES_NO_OPTION);
 					if (op == JOptionPane.YES_OPTION) {
 						State.player.addSong(songList.get(index));
-						JOptionPane.showMessageDialog(list, "已成功添加歌曲到队列。");
+						JOptionPane.showMessageDialog(frame, "已成功添加歌曲到队列。");
 					}
 				}
 			}
