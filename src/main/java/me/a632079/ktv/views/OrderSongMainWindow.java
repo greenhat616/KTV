@@ -44,15 +44,21 @@ public class OrderSongMainWindow {
 
 		JButton btnOrderByArtistButton = new JButton("歌手点歌");
 		btnOrderByArtistButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
-		btnOrderByArtistButton.setBounds(113, 25, 176, 37);
+		btnOrderByArtistButton.setBounds(113, 49, 176, 37);
 		frame.getContentPane().add(btnOrderByArtistButton);
 
 		JButton btnOrderByNameButton = new JButton("歌名点歌");
+		btnOrderByNameButton.addActionListener(e -> {
+
+		});
 		btnOrderByNameButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnOrderByNameButton.setBounds(113, 96, 176, 37);
 		frame.getContentPane().add(btnOrderByNameButton);
 
 		JButton btnOrderByStyleButton = new JButton("风格点歌");
+		btnOrderByStyleButton.addActionListener(e -> {
+
+		});
 		btnOrderByStyleButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnOrderByStyleButton.setBounds(113, 169, 176, 37);
 		frame.getContentPane().add(btnOrderByStyleButton);
