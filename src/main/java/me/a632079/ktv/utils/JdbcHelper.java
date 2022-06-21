@@ -422,7 +422,7 @@ public class JdbcHelper {
         while (rs.next()) {
             ResultSetMetaData md = rs.getMetaData();
             Map map = new HashMap();
-            for (int i = 1; i < md.getColumnCount(); i++) {
+            for (int i = 1; i <= md.getColumnCount(); i++) {
                 map.put(md.getColumnLabel(i), rs.getObject(i));
             }
             list.add(map);

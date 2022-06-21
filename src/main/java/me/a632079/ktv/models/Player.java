@@ -1,6 +1,6 @@
 package me.a632079.ktv.models;
 
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,8 +66,8 @@ public class Player {
 				throw new ListEmptyException();
 			}
 			Song song = list.get(0); // 获取播放列表中的第一首歌
-			FileInputStream fileInputStream = new FileInputStream(song.getPath());
-			AudioInputStream ais = AudioSystem.getAudioInputStream(fileInputStream);
+			File file = new File(song.getPath());
+			AudioInputStream ais = AudioSystem.getAudioInputStream(file);
 			// AudioFormat format = ais.getFormat(); // 获得格式信息
 			// DataLine.Info info = new DataLine.Info(Clip.class, format);
 			// instance = (Clip) AudioSystem.getLine(info);
