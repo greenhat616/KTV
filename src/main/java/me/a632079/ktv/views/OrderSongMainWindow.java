@@ -49,7 +49,7 @@ public class OrderSongMainWindow {
 
 		JButton btnOrderByNameButton = new JButton("歌名点歌");
 		btnOrderByNameButton.addActionListener(e -> {
-
+			OrderSongByNameWindow.main(null);
 		});
 		btnOrderByNameButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		btnOrderByNameButton.setBounds(113, 96, 176, 37);

@@ -69,6 +69,9 @@ public class MainUserWindow {
 		btnOrderSongButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		btnOrderSongButton.setBounds(44, 296, 117, 45);
 		frame.getContentPane().add(btnOrderSongButton);
+		btnOrderSongButton.addActionListener(e -> {
+			OrderSongMainWindow.main(null);
+		});
 
 		// 已点歌曲
 		JButton btnSongQueueButton = new JButton("\u5DF2\u70B9\u6B4C\u66F2");
