@@ -4,10 +4,13 @@ import me.a632079.ktv.models.Player;
 import me.a632079.ktv.models.Song;
 import me.a632079.ktv.models.State;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -90,7 +93,11 @@ public class SongListWindow {
 
         topItem.addActionListener(e -> {
             if (selectedSong != null) {
-                player.topSong(selectedSong);
+                try {
+                    player.topSong(selectedSong);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
                 refreshOrderedSongList(orderedSongList, player);
             }
         });
@@ -99,7 +106,12 @@ public class SongListWindow {
 
         deleteItem.addActionListener(e-> {
             if (selectedSong != null) {
-                player.removeSong(selectedSong.getId());
+                try {
+                    player.removeSong(selectedSong);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+
                 refreshOrderedSongList(orderedSongList, player);
             }
         });
@@ -120,7 +132,6 @@ public class SongListWindow {
                 }
             }
         });
-
 
         // 以唱歌曲列表
         JList sungSongList = new JList();
