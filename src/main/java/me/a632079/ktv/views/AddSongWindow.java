@@ -1,6 +1,5 @@
 package me.a632079.ktv.views;
 
-import me.a632079.ktv.models.Song;
 import me.a632079.ktv.utils.JdbcHelper;
 
 import javax.swing.*;
@@ -13,7 +12,6 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.math.BigInteger;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 public class AddSongWindow {
