@@ -183,11 +183,52 @@ public class Player {
 		return playedList;
 	}
 
-	public void removeSong(int id) {
-		list.remove(id);
+	public void removeSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, ListEmptyException, IOException {
+		if (playingSong == song) {
+			if (currentStatus == STATUS_PLAYING) {
+				pause();
+			}
+
+			instance.close();
+		}
+
+		list.removeIf(e -> e.equals(song));
+
+		if (currentStatus == STATUS_WAITING) {
+			return;
+		}
+
+		if (list.size() >= 1) {
+			currentStatus = STATUS_WAITING;
+
+			pos = 0;
+			play();
+		}
 	}
 
 	public void topSong(int id) {
 		list.add(0, list.remove(id));
+	}
+
+	public void topSong(Song song) throws UnsupportedAudioFileException, LineUnavailableException, ListEmptyException, IOException {
+		boolean isPlaying = false;
+		if (currentStatus == STATUS_PLAYING) {
+			pause();
+			isPlaying = true;
+		}
+
+		list.remove(song);
+		list.add(0, song);
+
+		if (!isPlaying) {
+			return;
+		} else {
+			currentStatus = STATUS_WAITING;
+		}
+
+		pos = 0;
+		instance.close();
+
+		play();
 	}
 }
