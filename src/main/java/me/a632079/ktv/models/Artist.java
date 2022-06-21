@@ -8,7 +8,7 @@ public class Artist {
 	private String name;
 	private String region; // 歌手地区
 	private String shortName;
-	private String avatar;
+	private String avatar; // 海报、头像
 
 	public Artist() {
 		id = 0;

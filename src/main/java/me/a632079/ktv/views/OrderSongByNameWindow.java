@@ -155,6 +155,7 @@ public class OrderSongByNameWindow {
 		panel.setLayout(new CardLayout(0, 0));
 
 		list = new JList();
+		list.setFont(new Font("微软雅黑", Font.PLAIN, 15));
 		list.setModel(listModel);
 		panel.add(list, "name_240330485565900");
 		JScrollPane scrollPane = new JScrollPane(list, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,

@@ -45,7 +45,7 @@ public class ImagePanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (x != 0 || y != 0) {
-			g.drawImage(image, 0, 0, x, y, this);
+			g.drawImage(image, 0, 0, x, y, this); // x, y 为容器的大小，用于自动缩放图片
 		} else {
 			g.drawImage(image, 0, 0, this);
 		}

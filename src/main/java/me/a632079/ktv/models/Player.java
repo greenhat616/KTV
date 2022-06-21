@@ -23,10 +23,10 @@ public class Player {
 	// 播放列表
 	private List<Song> list = new ArrayList<>();
 	private List<Song> playedList = new ArrayList<>();
-	private Map<String, Integer> songsStatistic = new HashMap<>();
-	private Song playingSong = null;
-	private Clip instance = null;
-	private int pos = 0; // 播放位置
+	private Map<String, Integer> songsStatistic = new HashMap<>(); // 歌曲播放信息统计表
+	private Song playingSong = null; // 当前播放的歌曲对象
+	private Clip instance = null; // Clip 实例
+	private int pos = 0; // 播放位置, 仅用于暂停保存状态
 	// 播放状态
 	public int STATUS_WAITING = 0; // 空列表, 无播放任务
 	public int STATUS_PLAYING = 1;
@@ -72,7 +72,8 @@ public class Player {
 			AudioInputStream ais = AudioSystem.getAudioInputStream(file);
 			// AudioFormat format = ais.getFormat(); // 获得格式信息
 			// DataLine.Info info = new DataLine.Info(Clip.class, format);
-			// instance = (Clip) AudioSystem.getLine(info);
+			instance = null; // 销毁之前的实例；如果不销毁的话，直接 open 会出现多个 `start`、`stop` 等事件。
+			instance = (Clip) AudioSystem.getClip(); // 直接获得 Clip
 			instance.open(ais);
 			ais.close();
 			instance.addLineListener(new LineListener() {
@@ -190,7 +191,7 @@ public class Player {
 		System.out.println("[Player.remove] 开始删除歌曲：" + song.getName());
 		int buffCurrentStatus = currentStatus;
 		if (playingSong.getId() == song.getId()) {
-			System.out.println("[Player.remove] 发现同名歌曲，执行资源释放逻辑。");
+			System.out.println("[Player.remove] 发现歌曲正常播放，执行资源释放逻辑。");
 			pause();
 			instance.close();
 			pos = 0; // pause 方法会修改 pos，这里需要重置
@@ -205,7 +206,7 @@ public class Player {
 		}
 
 		try {
-			play();
+			play(); // 如果当前正常播放，Play 方法会跳过处理
 		} catch (ListEmptyException e) {
 			// 忽略该错误
 		}
@@ -232,7 +233,7 @@ public class Player {
 			return;
 		}
 		try {
-			play();
+			play(); // 如果当前正常播放，Play 方法会跳过处理
 		} catch (ListEmptyException e) {
 			// 忽略
 		}
