@@ -57,7 +57,7 @@ public class AdminManageWindow {
 		frame = new JFrame();
 		frame.setTitle("\u6B4C\u66F2\u7BA1\u7406");
 		frame.setBounds(100, 100, 638, 448);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
 
