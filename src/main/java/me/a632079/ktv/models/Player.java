@@ -158,10 +158,15 @@ public class Player {
 	}
 
 	public void removeSong(int id) {
-		list.remove(id);
+		list.removeIf(e -> e.getId() == id);
 	}
 
 	public void topSong(int id) {
 		list.add(0, list.remove(id));
+	}
+
+	public void topSong(Song song) {
+		list.remove(song);
+		list.add(0, song);
 	}
 }
