@@ -5,10 +5,16 @@
       <artifact name="KTV:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9211346f-95e3-4132-a4ec-da0b92d9f68d" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddSongWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/AddSongWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/MainUserWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/MainUserWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/OrderSongByArtistWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/OrderSongByArtistWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/OrderSongByNameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/a632079/ktv/views/OrderSongByNameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/dbConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dbConfig.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +43,17 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KTV" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KTV" type="f1a62948:ProjectNode" />
+                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -86,7 +102,20 @@
       <recent name="D:\Programs\Java\KTV\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="应用程序.AddArtistWindow">
+    <configuration name="AddArtistWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.a632079.ktv.views.AddArtistWindow" />
+      <module name="KTV.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.a632079.ktv.views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -112,15 +141,23 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Application" />
       <item itemvalue="Gradle.KTV [jar]" />
+      <item itemvalue="应用程序.Application" />
+      <item itemvalue="应用程序.AddArtistWindow" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.AddArtistWindow" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -157,64 +194,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1655730577813">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1655730577813" />
-    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1655731288540">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1655731288540" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1655731343705">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1655731343705" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1655731343705">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1655731343705" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1655731343705">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1655731343705" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1655731343705">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1655731343705" />
-    <state width="1493" height="242" key="GridCell.Tab.1.bottom" timestamp="1655731150903">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1655731150903" />
-    <state width="1493" height="242" key="GridCell.Tab.1.center" timestamp="1655731150903">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1655731150903" />
-    <state width="1493" height="242" key="GridCell.Tab.1.left" timestamp="1655731150903">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1655731150903" />
-    <state width="1493" height="242" key="GridCell.Tab.1.right" timestamp="1655731150903">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1655731150903" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1655730274121">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1655730274121" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1655730712813">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1655730712813" />
-    <state x="469" y="128" width="598" height="568" key="find.popup" timestamp="1655730367630">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="469" y="128" width="598" height="568" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1655730367630" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1655731020695">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1655731020695" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

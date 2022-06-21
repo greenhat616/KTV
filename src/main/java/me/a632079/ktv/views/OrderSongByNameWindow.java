@@ -6,6 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class OrderSongByNameWindow {
 
@@ -54,7 +56,12 @@ public class OrderSongByNameWindow {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("查询");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton.setBounds(361, 538, 98, 40);
 		frame.getContentPane().add(btnNewButton);
 	}
