@@ -79,9 +79,9 @@ public class Player {
 
 				@Override
 				public void update(LineEvent event) {
-					// System.out.println(event.getType());
-					// System.out.println(instance.getFramePosition());
-					// System.out.println(instance.getFrameLength());
+					System.out.println("[Player] 触发事件：" + event.getType());
+					System.out.println("当前进度：" + instance.getFramePosition());
+					System.out.println("总进度：" + instance.getFrameLength());
 
 					// 当事件为停止时，且位置为最后位置，自动播放下一首
 					if (event.getType() == LineEvent.Type.STOP
