@@ -74,6 +74,7 @@ public class OrderSongByNameWindow {
 			listModel.clear();
 			songList.clear();
 			for (Map<String, Object> v : resultList) {
+				System.out.println(v);
 				List<Map<String, Object>> artist = JdbcHelper.query("SELECT * FROM `artists` WHERE `id` = ?",
 						v.get("artist_id"));
 				v.put("artist", new Artist(artist.get(0))); // 忽略歌手不存在的错误
