@@ -57,6 +57,10 @@ public class Player {
 	}
 
 	public void play() throws ListEmptyException, UnsupportedAudioFileException, IOException, LineUnavailableException {
+		if (currentStatus != STATUS_WAITING && instance.getFramePosition() >= instance.getFrameLength()) {
+			replay(); // 直接调用重播逻辑
+			return;
+		}
 		if (currentStatus == STATUS_PLAYING)
 			return;
 		if (currentStatus == STATUS_PASUED || pos != 0) {
@@ -64,7 +68,7 @@ public class Player {
 			pos = 0; // 重置状态
 		} else if (!instance.isOpen()) { // 没有初始化音频流，需要先初始化
 			// System.out.print("12321312312");
-			if (list.isEmpty()) {
+			if (list.isEmpty()) { // 列表为空
 				throw new ListEmptyException();
 			}
 			Song song = list.get(0); // 获取播放列表中的第一首歌
