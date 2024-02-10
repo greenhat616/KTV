@@ -15,7 +15,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     implementation 'mysql:mysql-connector-java:8.0.29' // MySQL JDBC 连接库
-    implementation 'cn.hutool:hutool-all:5.8.3' // HuTool 语法糖 工具类
+    implementation 'cn.hutool:hutool-all:5.8.26' // HuTool 语法糖 工具类
 }
 
 test {
